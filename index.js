@@ -1,6 +1,7 @@
 // this currently outputs "I am at index 4" 4 times. How can we get it to output index 1, 2, 3, 4? --> we also know there are two possible solutions.
 
 const array = [1, 2, 3, 4];
+
 // for(var i=0; i < array.length; i++) {
 //   setTimeout(function() {
 //     console.log('I am at index' + i)
