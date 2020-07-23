@@ -57,9 +57,20 @@ const array = [1, 2, 3, 4];
 
 // Now then, what is the second solution? would it also be let but placed in the parent scope of the setTimeout function? That's it! Holy crap we actually solved one!
 
+// for(var i=0; i < array.length; i++) {
+//   let index = i
+//   setTimeout(function() {
+//     console.log('I am at index ' + index)
+//   }, 3000)
+// }
+
+// maybe not according to Andrei's solution video. The second solution in this case uses an IIFE to solve the problem. He created a function that gave him access to i by passing it as a parameter, recieving it and using it inside of the callback function.
+
 for(var i=0; i < array.length; i++) {
-  let index = i
+  (function(closureI) {
   setTimeout(function() {
-    console.log('I am at index' + index)
+    console.log('I am at index ' + array[closureI])
   }, 3000)
+  })(i)
 }
+
